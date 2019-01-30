@@ -32,8 +32,7 @@
             <EditText
                     style="@style/edit_text"
                     android:hint="@string/edittext_email"
-                    android:inputType="textEmailAddress" 
-                    android:autofillHints="@string/edittext_email"/>
+                    android:inputType="textEmailAddress"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -58,7 +57,7 @@
                 style="@style/text_link"
                 android:text="@string/link_forgotpass"
                 android:gravity="center"
-                />
+        />
 
         <Button
                 style="@style/button_facebook"
@@ -66,7 +65,7 @@
 
         <Button
                 style="@style/button_google"
-        android:text="@string/button_google"/>
+                android:text="@string/button_google"/>
 
         <TextView
                 style="@style/text_link"
