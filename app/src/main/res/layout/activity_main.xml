@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".MainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+        <TextView
+                style="@style/header_title"
+                android:text="@string/text_name"
+                android:gravity="center"/>
+
+        <TextView
+                style="@style/header_title"
+                android:text="@string/text_company"
+                android:gravity="center"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <EditText
+                    style="@style/edit_text"
+                    android:hint="@string/edittext_email"
+                    android:inputType="textEmailAddress"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorPrimary">
+
+            <EditText
+                    style="@style/edit_text"
+                    android:inputType="textPassword"
+                    android:hint="@string/edittext_password"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+                style="@style/button_login"
+                android:text="@string/button_login"/>
+
+        <TextView
+                style="@style/text_link"
+                android:text="@string/link_forgotpass"
+                android:gravity="center"
+                />
+
+        <Button
+                style="@style/button_facebook"
+                android:text="@string/button_facebook"/>
+
+        <Button
+                style="@style/button_google"
+        android:text="@string/button_google"/>
+
+        <TextView
+                style="@style/text_link"
+                android:text="@string/link_register"
+                android:gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EazySplit Empresas</string>
+    <string name="text_name">EAZY÷SPLIT</string>
+    <string name="text_company">EMPRESAS</string>
+    <string name="button_login">Entrar</string>
+    <string name="button_facebook">Entrar com Facebook</string>
+    <string name="button_google">Entrar com Google</string>
+    <string name="edittext_email">E-mail</string>
+    <string name="edittext_password">Senha</string>
+    <string name="link_forgotpass">Esqueci minha senha</string>
+    <string name="link_register">Cadastrar outro e-mail</string>
+</resources>
