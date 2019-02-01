@@ -10,7 +10,7 @@
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:focusable="true"
             android:focusableInTouchMode="true">
@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content">
 
             <EditText
+                    android:id="@+id/etemail"
                     style="@style/edit_text"
                     android:hint="@string/edittext_email"
                     android:inputType="textEmailAddress"/>
@@ -44,6 +45,7 @@
                 app:passwordToggleTint="@color/colorPrimary">
 
             <EditText
+                    android:id="@+id/etsenha"
                     style="@style/edit_text"
                     android:inputType="textPassword"
                     android:hint="@string/edittext_password"/>
@@ -51,24 +53,26 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
+                android:id="@+id/btlogin"
                 style="@style/button_login"
                 android:text="@string/button_login"/>
 
         <TextView
+                android:id="@+id/tvforgotpassword"
                 style="@style/text_link"
                 android:text="@string/link_forgotpass"
-                android:gravity="center"
-        />
+                android:gravity="center"/>
 
         <Button
-                android:id="@+id/fb"
+                android:id="@+id/btfacebook"
                 style="@style/button_facebook" />
 
         <Button
-                style="@style/button_google"
-                android:text="@string/button_google"/>
+                android:id="@+id/btgoogle"
+                style="@style/button_google"/>
 
         <TextView
+                android:id="@+id/tvotheremail"
                 style="@style/text_link"
                 android:text="@string/link_register"
                 android:gravity="center"/>
