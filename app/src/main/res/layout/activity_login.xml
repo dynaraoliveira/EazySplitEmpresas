@@ -4,13 +4,13 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".MainActivity"
+        tools:context=".LoginActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:focusable="true"
             android:focusableInTouchMode="true">
@@ -18,7 +18,8 @@
         <TextView
                 style="@style/header_title"
                 android:text="@string/text_name"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:layout_marginTop="20dp"/>
 
         <TextView
                 style="@style/header_title"
@@ -60,8 +61,8 @@
         />
 
         <Button
-                style="@style/button_facebook"
-                android:text="@string/button_facebook"/>
+                android:id="@+id/fb"
+                style="@style/button_facebook" />
 
         <Button
                 style="@style/button_google"
