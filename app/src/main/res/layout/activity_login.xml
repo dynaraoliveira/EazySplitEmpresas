@@ -31,10 +31,10 @@
                 android:layout_height="wrap_content">
 
             <EditText
-                    android:id="@+id/etemail"
+                    android:id="@+id/etEmail"
                     style="@style/edit_text"
                     android:hint="@string/edittext_email"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress" android:autofillHints=""/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -45,34 +45,34 @@
                 app:passwordToggleTint="@color/colorPrimary">
 
             <EditText
-                    android:id="@+id/etsenha"
+                    android:id="@+id/etPassword"
                     style="@style/edit_text"
                     android:inputType="textPassword"
-                    android:hint="@string/edittext_password"/>
+                    android:hint="@string/edittext_password" android:autofillHints=""/>
 
         </android.support.design.widget.TextInputLayout>
 
         <Button
-                android:id="@+id/btlogin"
+                android:id="@+id/btLogin"
                 style="@style/button_login"
                 android:text="@string/button_login"/>
 
         <TextView
-                android:id="@+id/tvforgotpassword"
+                android:id="@+id/tvForgotPassword"
                 style="@style/text_link"
                 android:text="@string/link_forgotpass"
                 android:gravity="center"/>
 
         <Button
-                android:id="@+id/btfacebook"
-                style="@style/button_facebook" />
+                android:id="@+id/btFacebook"
+                style="@style/button_facebook"/>
 
         <Button
-                android:id="@+id/btgoogle"
+                android:id="@+id/btGoogle"
                 style="@style/button_google"/>
 
         <TextView
-                android:id="@+id/tvotheremail"
+                android:id="@+id/tvOtherEmail"
                 style="@style/text_link"
                 android:text="@string/link_register"
                 android:gravity="center"/>

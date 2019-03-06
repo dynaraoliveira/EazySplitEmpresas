@@ -9,4 +9,7 @@
     <string name="edittext_password">Senha</string>
     <string name="link_forgotpass">Esqueci minha senha</string>
     <string name="link_register">Cadastrar outro e-mail</string>
+    <string name="facebook_app_id">2163680473884245</string>
+    <string name="fb_login_protocol_scheme">fb2163680473884245</string>
+    <string name="request_id_token">812042450385-2vve0fvmnusplfimlnhrqg4dag6ssmps.apps.googleusercontent.com</string>
 </resources>
