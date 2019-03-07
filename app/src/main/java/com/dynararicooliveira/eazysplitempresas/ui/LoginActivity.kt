@@ -1,10 +1,11 @@
-package com.dynararicooliveira.eazysplitempresas
+package com.dynararicooliveira.eazysplitempresas.ui
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.dynararicooliveira.eazysplitempresas.R
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.google.firebase.auth.FirebaseAuth
@@ -43,15 +44,36 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getSupportActionBar()?.hide()
         setContentView(R.layout.activity_login)
 
-        configureButtonLogin()
-        configureSignUpOtherEmail()
-        configureButtonLoginGoogle()
-        configureButtonLoginFacebook()
+        setupButtonLogin()
+        setupSignUpOtherEmail()
+        setupButtonLoginGoogle()
+        setupButtonLoginFacebook()
     }
 
-    private fun configureButtonLogin() {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        when (requestCode) {
+            GOOGLE_SIGN_IN_REQUEST_CODE -> {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+
+                try {
+                    val account = task.getResult(ApiException::class.java)
+                    handleGoogleAccessToken(account)
+                } catch (e: ApiException) {
+                    Log.w(TAG, "signInResult:failed code=" + e.message)
+                }
+            }
+            else -> {
+                callbackManager.onActivityResult(requestCode, resultCode, data)
+            }
+        }
+    }
+
+    private fun setupButtonLogin() {
         btLogin.setOnClickListener {
             if (validateFields()) {
                 mAuth.signInWithEmailAndPassword(etEmail.text.toString(), etPassword.text.toString())
@@ -66,13 +88,13 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun configureSignUpOtherEmail() {
+    private fun setupSignUpOtherEmail() {
         tvOtherEmail.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
     }
 
-    private fun configureButtonLoginGoogle() {
+    private fun setupButtonLoginGoogle() {
         btGoogle.setOnClickListener {
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.request_id_token))
@@ -84,7 +106,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun configureButtonLoginFacebook() {
+    private fun setupButtonLoginFacebook() {
         btFacebook.setOnClickListener {
             callbackManager = CallbackManager.Factory.create()
 
@@ -112,26 +134,6 @@ class LoginActivity : AppCompatActivity() {
             return false
         }
         return true
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        when (requestCode) {
-            GOOGLE_SIGN_IN_REQUEST_CODE -> {
-                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-
-                try {
-                    val account = task.getResult(ApiException::class.java)
-                    handleGoogleAccessToken(account)
-                } catch (e: ApiException) {
-                    Log.w(TAG, "signInResult:failed code=" + e.message)
-                }
-            }
-            else -> {
-                callbackManager.onActivityResult(requestCode, resultCode, data)
-            }
-        }
     }
 
     private fun handleGoogleAccessToken(account: GoogleSignInAccount?) {
