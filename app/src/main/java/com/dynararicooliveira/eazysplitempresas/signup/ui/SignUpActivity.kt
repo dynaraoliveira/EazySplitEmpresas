@@ -1,10 +1,11 @@
-package com.dynararicooliveira.eazysplitempresas.ui
+package com.dynararicooliveira.eazysplitempresas.signup.ui
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.dynararicooliveira.eazysplitempresas.R
+import com.dynararicooliveira.eazysplitempresas.menu.ui.MenuActivity
 import com.dynararicooliveira.eazysplitempresas.model.Company
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -28,14 +29,14 @@ class SignUpActivity : AppCompatActivity() {
             etPasswordConfirmation.setText("123456")
             etPasswordConfirmation.isEnabled = false
             mAuth.currentUser?.displayName.let { etCompanyName.setText(it) }
-            mAuth.currentUser?.email.let { etEmail.setText(it) }
+            mAuth.currentUser?.email.let { etCompanyEmail.setText(it) }
             Picasso.get().load(mAuth.currentUser?.photoUrl).into(ivBrandCompany)
         }
 
         btCreate.setOnClickListener {
             if (validateFields()) {
                 if (mAuth.currentUser == null) {
-                    mAuth.createUserWithEmailAndPassword(etEmail.text.toString(), etPassword.text.toString())
+                    mAuth.createUserWithEmailAndPassword(etCompanyEmail.text.toString(), etPassword.text.toString())
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
                                 saveInRealtimeDatabase()
@@ -56,7 +57,7 @@ class SignUpActivity : AppCompatActivity() {
 
         if (etPassword.text.toString() != etPasswordConfirmation.text.toString()) message = "Senha não confere"
         if (etPassword.text.toString() == "" || etPasswordConfirmation.text.toString() == "") message = "Preencha a senha"
-        if (etEmail.text.toString() == "") message = "Preencha o e-mail"
+        if (etCompanyEmail.text.toString() == "") message = "Preencha o e-mail"
         if (etCompanyName.text.toString() == "") message = "Preencha o nome"
 
         if (message != "") {
@@ -70,7 +71,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun saveInRealtimeDatabase() {
         val user = Company(
             etCompanyName.text.toString(),
-            etEmail.text.toString(),
+            etCompanyEmail.text.toString(),
             etPhone.text.toString(),
             "",
             mAuth.currentUser!!.photoUrl.toString()

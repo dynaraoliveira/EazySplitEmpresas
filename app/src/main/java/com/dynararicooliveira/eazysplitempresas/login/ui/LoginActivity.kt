@@ -1,4 +1,4 @@
-package com.dynararicooliveira.eazysplitempresas.ui
+package com.dynararicooliveira.eazysplitempresas.login.ui
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.dynararicooliveira.eazysplitempresas.R
+import com.dynararicooliveira.eazysplitempresas.menu.ui.MenuActivity
+import com.dynararicooliveira.eazysplitempresas.signup.ui.SignUpActivity
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.google.firebase.auth.FirebaseAuth

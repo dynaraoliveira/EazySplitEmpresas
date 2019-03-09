@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".stores.ui.StoresActivity">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <EditText
+                        android:id="@+id/etZipCode"
+                        style="@style/edit_text"
+                        android:hint="@string/edittext_zipcode"
+                        android:inputType="number"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                    android:id="@+id/btSearch"
+                    style="@style/button_login"
+                    android:text="@string/button_search"/>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <EditText
+                        android:id="@+id/etAddress"
+                        style="@style/edit_text"
+                        android:hint="@string/edittext_address"
+                        android:inputType="textPostalAddress"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <EditText
+                        android:id="@+id/etAddressNumber"
+                        style="@style/edit_text"
+                        android:hint="@string/edittext_address_number"
+                        android:inputType="number"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <EditText
+                        android:id="@+id/etAddressCity"
+                        style="@style/edit_text"
+                        android:hint="@string/edittext_address_city"
+                        android:inputType="text"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <EditText
+                        android:id="@+id/etAddressState"
+                        style="@style/edit_text"
+                        android:hint="@string/edittext_address_state"
+                        android:inputType="text"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <EditText
+                        android:id="@+id/etAddressNeighborhood"
+                        style="@style/edit_text"
+                        android:hint="@string/edittext_address_neighborhood"
+                        android:inputType="text"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <EditText
+                        android:id="@+id/etAddressComplement"
+                        style="@style/edit_text"
+                        android:hint="@string/edittext_address_complement"
+                        android:inputType="text"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                    android:id="@+id/btIncluir"
+                    style="@style/button_login"
+                    android:text="@string/edittext_insert"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+            android:id="@+id/loading"
+            android:background="#FFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+        <TextView
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Carregando os dados..."/>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,9 +1,12 @@
 package com.dynararicooliveira.eazysplitempresas.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Address (
-    val addressZipCode: String = "",
-    val addressNumber: String = "",
-    val addressDescription: String = "",
-    val addressCity: String = "",
-    val addressState: String = ""
+    @SerializedName("cep") val addressZipCode: String,
+    @SerializedName("logradouro") val addressDescription: String,
+    @SerializedName("complemento") val addressComplement: String,
+    @SerializedName("bairro") val addressNeighborhood: String,
+    @SerializedName("localidade") val addressLocality: String,
+    @SerializedName("uf") val addressState: String
 )
