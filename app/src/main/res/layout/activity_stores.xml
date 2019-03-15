@@ -9,7 +9,7 @@
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        
+
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -17,22 +17,33 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true">
 
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    style="@style/margin_default">
 
-                <EditText
-                        android:id="@+id/etZipCode"
-                        style="@style/edit_text"
-                        android:hint="@string/edittext_zipcode"
-                        android:inputType="number"/>
+                <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                    <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/etZipCode"
+                            android:textSize="20sp"
+                            android:hint="@string/edittext_zipcode"
+                            android:inputType="number"
+                            android:imeOptions="actionSearch"/>
+                </android.support.design.widget.TextInputLayout>
 
-            </android.support.design.widget.TextInputLayout>
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btSearch"
+                        android:src="@drawable/ic_gps"/>
 
-            <Button
-                    android:id="@+id/btSearch"
-                    style="@style/button_login"
-                    android:text="@string/button_search"/>
+            </LinearLayout>
 
             <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -107,7 +118,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                    android:id="@+id/btIncluir"
+                    android:id="@+id/btInsert"
                     style="@style/button_login"
                     android:text="@string/edittext_insert"/>
 

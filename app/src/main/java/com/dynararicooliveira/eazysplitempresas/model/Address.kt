@@ -10,3 +10,12 @@ data class Address (
     @SerializedName("localidade") val addressLocality: String,
     @SerializedName("uf") val addressState: String
 )
+
+data class AddressDatabase (
+    val addressZipCode: String = "",
+    val addressDescription: String = "",
+    val addressComplement: String = "",
+    val addressNeighborhood: String = "",
+    val addressCity: String = "",
+    val addressState: String = ""
+)
